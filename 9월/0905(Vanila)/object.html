@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let 맴버 = {
+            name: '제니',
+            age: 26,
+            team: '블랙핑크'
+        }
+
+        let name=맴버.name //.표기법
+        console.log(name);
+
+        let role=맴버.role
+        console.log(role);
+
+        //[]대괄호 표기법: 지정되지 않는 값을 변수처리 하기 위함
+        let age=맴버['age']
+        console.log(age);
+
+        맴버.job="가수"
+        맴버['role']='메인보컬'  
+        console.log(맴버);
+      
+        맴버.job="댄서"
+        console.log(맴버);
+
+        delete 맴버.role
+        console.log(맴버);
+    </script>
+</body>
+
+</html>

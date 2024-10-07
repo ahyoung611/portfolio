@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="/reset.css">
+    <style>
+        .frame {
+            width: 500px;
+        }
+
+        figure img {
+            width: 100%;
+        }
+
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <figure><img src="./images/rush1.png" alt=""></figure>
+        <ul>
+            <li data-bg="./images/rush1.png">프랑스</li>
+            <li data-bg="./images/rush2.png">이탈리아</li>
+            <li data-bg="./images/rush3.png">그리스</li>
+        </ul>
+    </div>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script>
+        /* li a 이미지 링크 넣었을 경우*/
+
+        // // $('li a').click(function(e){
+        // //     e.preventDefault()
+        // //     const img=$(this).attr('href') //get
+        // //     $('figure img').attr('src',img) //set
+        // // })
+        // document.querySelectorAll('li a').forEach(function(a){
+        //     a.addEventListener('click',function(e){
+        //         e.preventDefault()
+        //         let img =this.getAttribute('href')
+        //         document.querySelector('figure img').setAttribute('src',img)
+        //     })
+        // })
+
+
+        /* li일 경우*/
+        // $('li').click(function () {
+
+        //     const img = $(this).data('bg') //get
+        //     $('figure img').attr('src', img) //set
+        // })
+
+        document.querySelectorAll('li').forEach(function(a){
+            a.addEventListener('click',function(){
+                // dataset 사용
+                let img =this.dataset.bg
+                // alert(img)
+                document.querySelector('figure img').setAttribute('src',img)
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비디오-컨트롤</title>
+    <link rel="stylesheet" href="/reset.css">
+    <style>
+        .scene {
+            width: 600px;
+            margin: auto;
+        }
+
+        .scene figure video {
+            width: 100%;
+        }
+
+        .scene .control {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .scene .control li {
+            width: 25%;
+            padding: 10px;
+            background: #e4e4e4;
+        }
+
+        .scene .control li.on {
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scene">
+        <figure>
+            <video src="./images/장원영 비타C 7일 톤업 세럼 본편.mp4" loop></video>
+        </figure>
+        <ul class="control">
+            <li class="play">play</li>
+            <li class="pause">pause</li>
+            <li class="stop">stop</li>
+            <li class="rate1">1배속</li>
+            <li class="rate2">2배속</li>
+            <li class="back">&lt&lt</li>
+            <li class="forw">&gt&gt</li>
+            <li class="s-on">sound on</li>
+            <li class="s-off">sound off</li>
+        </ul>
+    </div>
+
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        //get(0) 시작점
+        const v = $('video').get(0)
+        $('.play').click(function () {
+            buttonControl($(this))
+            v.play()
+        })
+
+        $('.pause').click(function () {
+            buttonControl($(this))
+            v.pause()
+        })
+
+        $('.stop').click(function () {
+            buttonControl($(this))
+            v.pause()
+            v.currentTime = 0
+        })
+
+        $('.rate1').click(function () {
+            buttonControl($(this))
+            v.playbackRate = 1
+        })
+
+        $('.rate2').click(function () {
+            buttonControl($(this))
+            v.playbackRate = 2
+        })
+
+        $('.back').click(function () {
+            buttonControl($(this))
+            v.currentTime -= 10
+        })
+
+        $('.forw').click(function () {
+            buttonControl($(this))
+            v.currentTime += 10
+        })
+
+        $('.s-on').click(function () {
+            buttonControl($(this))
+            v.muted = flase
+        })
+
+        $('.s-off').click(function () {
+            buttonControl($(this))
+            v.muted = true
+        })
+
+        function buttonControl(target) {
+            $('.control li').removeClass('on')
+            $(target).addClass('on')
+        }
+
+    </script>
+
+
+</body>
+
+</html>
