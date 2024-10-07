@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cube</title>
+    <style>
+        ul.nav li {
+            border: 1px solid #000;
+            display: inline-block;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        ul.nav li.on {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgb(151, 123, 0);
+            perspective: 600px;
+            margin: 100px;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+           
+            transform-style: preserve-3d;
+            transform: translateZ(-150px);
+            transition: 1s;
+        }
+
+        .cube.showFront{
+            transform: translateZ(-150px) rotateY(0deg); 
+        }
+        .cube.showRight{
+            transform: translateZ(-150px) rotateY(-90deg); 
+        }
+        .cube.showLeft{
+            transform: translateZ(-150px) rotateY(90deg); 
+        }
+        .cube.showBack{
+            transform: translateZ(-150px) rotateY(-180deg); 
+        }
+        .cube.showTop{
+            transform: translateZ(-150px) rotateX(-90deg); 
+        }
+        .cube.showBottom{
+            transform: translateZ(-150px) rotateX(90deg); 
+        }
+
+        .face {
+            border: 1px solid #ff0101;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 300px;
+            font-size: 30px;
+            position: absolute;
+        }
+
+        .front {
+            background-color: rgba(255, 124, 124,.5);
+            transform: rotateY(0deg) translateZ(150px);
+        }
+
+        .back {
+            background-color: #7cdeff85;
+            transform: rotateY(180deg) translateZ(150px);
+        }
+
+        .right {
+            background-color: #897cff81;
+            transform: rotateY(90deg) translateZ(150px);
+        }
+
+        .left {
+            background-color: #de7cff68;
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+
+        .top {
+            background-color: #cc00ff6b;
+            transform: rotateX(90deg) translateZ(150px);
+        }
+
+        .bottom {
+            background-color: #8eff9467;
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="cube">
+            <div class="face front">Front</div>
+            <div class="face back">Back</div>
+            <div class="face right">Right</div>
+            <div class="face left">Left</div>
+            <div class="face top">Top</div>
+            <div class="face bottom">Bottom</div>
+        </div>
+    </div>
+    <ul class="nav">
+        <li class="on">Front</li>
+        <li>Back</li>
+        <li>Right</li>
+        <li>Left</li>
+        <li>Top</li>
+        <li>Bottom</li>
+    </ul>
+
+    <script src="./script/jquery-3.7.1.min.js"></script>
+    <!-- <script>
+        $('ul.nav li').click(function(){
+            let liElem=$(this).text()
+            let activeClass= 'show'+liElem
+            $('#cube').removeClass()
+            $('#cube').addClass(activeClass)
+        })
+    </script> -->
+    <script>
+        let currentClass=''
+        $('ul.nav li').click(function(){
+            $('ul.nav li').removeClass('on')
+            $(this).addClass('on')
+
+            // li에 있는 문자값 읽기
+            let $li = $(this).text()
+
+            let activeClass = 'show'+ $li
+
+            // 기본클래스 값이 존재할때만 실행됨
+            if(currentClass){  
+                $('.cube').removeClass(currentClass)
+            }
+            $('.cube').addClass(activeClass)
+            
+            // 현재의 활성화 클래스를 기본클래스로 저장해라(지울애를 기억하기 위함)
+            currentClass = activeClass
+
+        })
+    </script>
+</body>
+
+</html>

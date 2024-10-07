@@ -1,0 +1,472 @@
+@charset "UTF-8";
+@import './reset.css';
+@font-face {
+  font-family: Pretendard-Regular;
+  src: url(./font/Pretendard-Regular.woff);
+}
+@font-face {
+  font-family: Pretendard-SemiBold;
+  src: url(./font/Pretendard-SemiBold.woff);
+}
+@font-face {
+  font-family: NanumMyeongjoBold;
+  src: url(./font/NanumMyeongjoBold.woff);
+}
+body {
+  background-color: black;
+  color: #fff;
+  font-family: NanumMyeongjoBold;
+}
+body .flex {
+  display: flex;
+}
+body .flex-c {
+  flex-direction: column;
+}
+body .flex-r {
+  flex-direction: row-reverse;
+}
+body .just-c {
+  justify-content: center;
+}
+body .just-sb {
+  justify-content: space-between;
+}
+body .align-c {
+  align-items: center;
+}
+body .bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gnb {
+  font-family: Pretendard-SemiBold;
+}
+.gnb header {
+  position: fixed;
+  left: 100px;
+  top: 0;
+  width: calc(100% - 100px);
+  height: 74px;
+  padding: 0 30px;
+  color: #fff;
+  z-index: 99;
+}
+.gnb header h1 {
+  width: 100px;
+  text-align: center;
+}
+.gnb header h1 img {
+  width: 100%;
+}
+.gnb header nav {
+  width: 400px;
+  padding-right: 20px;
+}
+.gnb header nav ul li {
+  font-weight: 500;
+  font-size: 17px;
+}
+.gnb header nav ul li:hover {
+  color: #FFC500;
+}
+.gnb .menu {
+  width: 100px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 99;
+  text-align: center;
+  padding: 20px;
+}
+.gnb .menu .menu-icon {
+  display: inline-block;
+  cursor: pointer;
+}
+.gnb .menu .menu-icon .bar1,
+.gnb .menu .menu-icon .bar2,
+.gnb .menu .menu-icon .bar3 {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+.gnb .menu .menu-icon .change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+.gnb .menu .menu-icon .change .bar2 {
+  opacity: 0;
+}
+.gnb .menu .menu-icon .change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.wrap {
+  max-width: 1920px;
+}
+.wrap section {
+  height: 100vh;
+  overflow: hidden;
+}
+.wrap .sect1 {
+  position: relative;
+}
+.wrap .sect1 .video {
+  width: 100%;
+  overflow: hidden;
+}
+.wrap .sect1 .video video {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wrap .sect1 .main-text {
+  text-transform: uppercase;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translatey(-50%);
+  color: #fff;
+}
+.wrap .sect1 .main-text h2 {
+  font-size: 76px;
+  word-spacing: -5px;
+  line-height: 1.3;
+}
+.wrap .sect1 .main-text p {
+  font-size: 19px;
+  padding-top: 20px;
+}
+.wrap .sect2 {
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./images/bg2.webp);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.wrap .sect2 h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  font-size: 48px;
+  line-height: 1.5;
+}
+.wrap .sect3 {
+  overflow: hidden;
+  position: relative;
+}
+.wrap .sect3 .group-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+.wrap .sect3 .group-bg .bg-list {
+  flex-direction: column;
+  gap: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-30deg) translate(5%, -50%);
+  transform-origin: center;
+}
+.wrap .sect3 .group-bg .bg-list .bg-item {
+  height: 300px;
+}
+.wrap .sect3 .group-bg .bg-list .bg-item:nth-child(even) .gallery {
+  animation-direction: reverse;
+}
+@keyframes gallery-ani {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.wrap .sect3 .group-bg .bg-list .bg-item .gallery {
+  animation-name: gallery-ani;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.wrap .sect3 .group-bg .bg-list .bg-item .gallery img {
+  height: 100%;
+}
+.wrap .sect3 h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  font-size: 48px;
+  line-height: 1.5;
+}
+.wrap .art1 {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+}
+.wrap .art1 img {
+  width: 100%;
+}
+.wrap .art2 {
+  width: 45%;
+  position: absolute;
+  top: 25%;
+  transition: 0.45s;
+}
+.wrap .bd-box1 {
+  width: 611px;
+  margin: 100px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.wrap .bd-box1 .bd-box2 {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.wrap .bd-box1 .bd-box2 .theme-title {
+  font-size: 68px;
+}
+.wrap .bd-box1 .bd-box2 .level-wrap {
+  font-family: "Pretendard-Regular";
+  font-size: 21px;
+  padding: 20px;
+}
+.wrap .bd-box1 .bd-box2 .level-wrap p {
+  padding-right: 10px;
+}
+.wrap .bd-box1 .bd-box2 .level-wrap .level li {
+  width: 25px;
+}
+.wrap .bd-box1 .bd-box2 .level-wrap .level li img {
+  width: 100%;
+}
+.wrap .bd-box1 .bd-box2 .detail-list {
+  gap: 100px;
+  padding: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.wrap .bd-box1 .bd-box2 .detail-list .detail-item p {
+  font-size: 25px;
+}
+.wrap .bd-box1 .bd-box2 .detail-list .detail-item strong {
+  font-size: 50px;
+}
+.wrap .bd-box1 .bd-box2 .type-item {
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+  gap: 20px;
+}
+.wrap .bd-box1 .bd-box2 .type-item .title {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+}
+.wrap .wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.wrap .sect4 {
+  background-image: url(./images/bg4.png);
+  width: 100%;
+  overflow: hidden;
+}
+.wrap .sect4 .art1-left {
+  position: absolute;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.35s;
+}
+.wrap .sect4 .art1-left.on {
+  transform: translate(-100%, -50%);
+}
+.wrap .sect4 .art1-left .theme-icon {
+  width: 498px;
+}
+.wrap .sect4 .art1-left .theme-icon.ani-r {
+  animation: rotate_image 8s linear infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes rotate_image {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.wrap .sect4 .art1-left .theme-text {
+  width: 664px;
+}
+.wrap .sect4 .art2.left {
+  left: 100%;
+}
+.wrap .sect4 .art2.left.on {
+  left: 50%;
+}
+.wrap .sect5 {
+  background-image: url(./images/bg5.png);
+  width: 100%;
+}
+.wrap .sect5 .art1-right {
+  position: absolute;
+  width: 30%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.35s;
+}
+.wrap .sect5 .art1-right.on {
+  transform: translateY(-50%);
+}
+.wrap .sect5 .art1-right .theme-icon1 {
+  width: 570px;
+}
+.wrap .sect5 .art2.right {
+  left: -100%;
+}
+.wrap .sect5 .art2.right.on {
+  left: 0%;
+}
+.wrap .sect6 {
+  background-image: url(./images/bg6.png);
+  width: 100%;
+}
+.wrap .sect6 .art1-end {
+  position: absolute;
+  width: 40%;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  transition: 0.45s;
+}
+.wrap .sect6 .art1-end.on {
+  transform: translateX(-100%);
+}
+.wrap .sect6 .art1-end .theme-icon1 {
+  width: 761px;
+}
+.wrap .sect6 .art2.end {
+  left: 100%;
+}
+.wrap .sect6 .art2.end.on {
+  left: 50%;
+}
+.wrap .sect6 .sect7 {
+  background-image: url(./images/bg7.png);
+  height: 100%;
+  overflow: hidden;
+}
+.wrap .sect6 .sect7 .swiper {
+  border: 1px solid #f00;
+  position: relative;
+  overflow: hidden;
+}
+.wrap .flex-d {
+  flex-direction: column;
+  justify-content: center;
+}
+.wrap .flex-d .title-wrap {
+  text-align: center;
+  margin: 25px;
+}
+.wrap .flex-d .title-wrap p {
+  font-size: 20px;
+  padding-bottom: 20px;
+  font-family: "Pretendard-Regular";
+}
+.wrap .flex-d .title-wrap h2 {
+  font-size: 60px;
+  padding-bottom: 10px;
+}
+.wrap .sect7 {
+  background-image: url(./images/bg7.png);
+  width: 100%;
+  position: relative;
+}
+.wrap .sect7 .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.wrap .sect7 .swiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 350px;
+}
+.wrap .sect7 .swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+}
+.wrap .sect7 .container {
+  position: relative;
+}
+.wrap .sect7 .container .hidden-text {
+  font-family: Pretendard-Regular;
+  opacity: 0;
+  /* 처음에는 텍스트를 숨김 */
+  transition: opacity 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+.wrap .sect7 .container .hidden-text h2 {
+  font-size: 32px;
+  text-align: center;
+  padding: 20px;
+}
+.wrap .sect7 .container .hidden-text h3 {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px 0;
+}
+.wrap .sect7 .container .hidden-text p {
+  font-weight: 200;
+  padding: 10px;
+}
+.wrap .sect7 .container .hidden-text .ga {
+  gap: 50px;
+  padding: 10px;
+}
+.wrap .sect7 .container .hidden-text .level li {
+  width: 25px;
+}
+.wrap .sect7 .container .hidden-text .level li img {
+  width: 100%;
+}
+.wrap .sect7 .container .hidden-text .detail {
+  line-height: 1.5;
+}
+.wrap .sect7 .container:hover .hidden-text {
+  opacity: 1;
+  /* hover할 때 텍스트를 보이게 함 */
+}
+.wrap .sect8 {
+  background-image: url(./images/bg8.png);
+  width: 100%;
+}
