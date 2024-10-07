@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/reset.css">
+    <script src="./js/modernizr.custom.97074.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* force scrollbar */
+        html {
+            overflow-y: scroll;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        /* ---- isotope ---- */
+        .container {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .grid {
+            background: #DDD;
+        }
+
+        /* clear fix  -> float 높이정하기 위해서 사용*/
+        .grid:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        /* ---- .grid-item ---- */
+
+        .grid-item {
+            width: calc(33.33333% - 12px);
+            margin-bottom: 20px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid-item img {
+            width: 100%;
+            display: block;
+        }
+
+        .summary {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #333;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            transform: opacity 0.3s ease, visibilty 0.3s ease;
+        }
+
+        .summary h4 {
+            border-bottom: 2px solid #fff;
+            padding: 10px;
+            font-size: 2vw;
+        }
+
+        .summary span.skill {
+            padding-top: 10px;
+        }
+
+        .grid-item:hover .summary {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 0;
+        }
+
+        ul.menu {
+            width: 50%;
+            display: flex;
+        }
+
+        ul.menu li {
+            flex: 1;
+        }
+
+        ul.menu li a {
+            display: inline-block;
+            padding: 20px;
+        }
+
+        ul.menu li a.on {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="#" data-filter="*" class="on">All</a></li>
+            <li><a href="#" data-filter=".project">Project</a></li>
+            <li><a href="#" data-filter=".web">CodeWorks</a></li>
+            <li><a href="#" data-filter=".design">Graphic&nbsp;Design</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <div class="grid">
+            <div class="grid-item web">
+                <a href="../7월/0703(3ce)반응형/index.html" target="_blank">
+                    <img src="./images/3ce2.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill">attachment 활용</span>
+                        <span class="date">24.07.03 ~ 24.07.05</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="../9월/0910(뮤고박스)/index..html" target="_blank">
+                    <img src="./images/mugo.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> getAttribute 활용</span>
+                        <span class="date">24.09.10 ~ 24.09.16</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item project">
+                <a  href="../8월/0822(큐브이스케이프)/index.html" target="_blank">
+                    <img src="./images/cube.png" />
+                    <div class="summary">
+                        <h4>Project</h4>
+                        <span class="skill"> 활용</span>
+                        <span class="date">24.08.22 ~ </span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="../8월/0827(젠틀몬스터)/index.html" target="_blank">
+                    <img src="./images/gentle-monster.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill">attachment 활용</span>
+                        <span class="date">24.08.27 ~ 24.08.31</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item design">
+                <a data-caption="Illustrator 활용"  data-fancybox="gallery" data-src="./images/festival포스터.png">
+                    <img src="./images/festival포스터.png" />
+                    <div class="summary">
+                        <h4>Graphic&nbsp;Design</h4>
+                        <span class="skill">Illustrator 활용</span>
+                        <span class="date">24.08.02 ~ 24.08.05</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid-item web">
+                <a href="../9월/0925(이니스프리)/index.html" target="_blank">
+                    <img src="./images/innisfree.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> Accordion Menu 활용</span>
+                        <span class="date">24.09.25 ~ 2024.09.27</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="/7월/0704(카카오)/index.html" target="_blank">
+                    <img src="./images/kakao.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> input 활용</span>
+                        <span class="date">24.07.04 ~ 2024.07.08</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item design">
+                <a  data-caption="Photoshop 활용"  data-fancybox="gallery" data-src="./images/제로웨이스트 포스터.png">
+                    <img src="./images/제로웨이스트 포스터.png" />
+                    <div class="summary">
+                        <h4>Graphic&nbsp;Design</h4>
+                        <span class="skill"> Photoshop 활용</span>
+                        <span class="date">24.08.02 ~ 24.08.05</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="/9월/0923(러쉬)/index.html" target="_blank">
+                    <img src="./images/lush.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> Tab 활용</span>
+                        <span class="date">24.09.23 ~ 2024.09.27</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid-item web">
+                <a href="/8월/0808(몬스터)/index.html" target="_blank">
+                    <img src="./images/moster-works.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> float 활용</span>
+                        <span class="date">24.08.08 ~ 24.08.10</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item design">
+                <a data-caption="Illustrator 활용"  data-fancybox="gallery" data-src="./images/플리마켓 포스터.png">
+                    <img src="./images/플리마켓 포스터.png" />
+                    <div class="summary">
+                        <h4>Graphic&nbsp;Design</h4>
+                        <span class="skill">Illustrator 활용</span>
+                        <span class="date">24.08.02 ~ 24.08.05</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="/8월/0822(애플)/phone.html">
+                    <img src="./images/apple.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill">Class제어 활용</span>
+                        <span class="date">24.08.22 ~ 24.08.25</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="/7월/0712(삼다수)/index.html" target="_blank" >
+                    <img src="./images/samdasu2.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> Skew 활용</span>
+                        <span class="date">24.07.12 ~ 24.07.15</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="/7월/0708(산리오)/index.html" target="_blank">
+                    <img src="./images/sanlio.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> hover 활용</span>
+                        <span class="date">24.07.08 ~ 24.07.11</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid-item web">
+                <a href="/7월/0719(SHIFT)/index.html" target="_blank">
+                    <img src="./images/shift.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> Swiper 활용</span>
+                        <span class="date">24.07.19 ~ 24.07.22</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="/8월/0817(닌텐도)/index.html" target="_blank">
+                    <img src="./images/swich.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> translate 활용</span>
+                        <span class="date">24.08.17 ~ 24.08.20</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item design">
+                <a  data-caption="Photoshop 활용"  data-fancybox="gallery" data-src="./images/하리보 포스터.png">
+                    <img src="./images/하리보 포스터.png" />
+                    <div class="summary">
+                        <h4>Graphic&nbsp;Design</h4>
+                        <span class="skill">Photoshop 활용</span>
+                        <span class="date">24.08.02 ~ 24.08.05</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="/9월/0903(워너브라더스)/index.html" target="_blank">
+                    <img src="./images/wanner-bros.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> animate 활용</span>
+                        <span class="date">24.09.03 ~ 24.09.07</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid-item web">
+                <a href="/9월/0909(우담라이팅)/index.html" target="_blank">
+                    <img src="./images/wodam.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> slideChange 활용</span>
+                        <span class="date">24.09.09 ~ 24.09.13</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="/9월/0919(롯데칠성음료)/index.html" target="_blank">
+                    <img src="./images/롯데칠성.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> autoplay 제어 활용</span>
+                        <span class="date">24.09.19 ~ 24.09.25</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item design">
+                <a data-caption="Illustrator 활용" data-fancybox="gallery" data-src="./images/커피 포스터.png">
+                    <img src="./images/커피 포스터.png" />
+                    <div class="summary">
+                        <h4>Graphic&nbsp;Design</h4>
+                        <span class="skill">Illustrator 활용</span>
+                        <span class="date">24.08.02 ~ 24.08.05</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="/8월/0802(지구오락실)/index.html" target="_blank">
+                    <img src="./images/지구오락실.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> Grid 활용</span>
+                        <span class="date">24.08.02 ~ 24.08.05</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid-item web">
+                <a href="/8월/0806(셈소나이트)/index.html" target="_blank">
+                    <img src="./images/samsonite.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> Attachment 활용</span>
+                        <span class="date">24.08.06 ~ 24.08.10</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item design">
+                <a data-caption="Illustrator 활용" data-fancybox="gallery" data-src="./images/ai 포스터.png">
+                    <img src="./images/ai 포스터.png"/>
+                    <div class="summary">
+                        <h4>Graphic&nbsp;Design</h4>
+                        <span class="skill">Illustrator 활용</span>
+                        <span class="date">24.08.02 ~ 24.08.05</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-item web">
+                <a href="/7월/0731(kb캐피탈)/index.html">
+                    <img src="./images//kb.png" />
+                    <div class="summary">
+                        <h4>CodeWorks</h4>
+                        <span class="skill"> 반응형 활용</span>
+                        <span class="date">24.07.31 ~ 2024.08.02</span>
+                    </div>
+                </a>
+            </div>
+         
+
+
+
+
+
+
+
+        </div><!-- grid -->
+    </div><!-- container -->
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="./js/jquery.hoverdir.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+
+        var $grid = $('.grid').isotope({
+            itemSelector: '.grid-item',
+
+            masonry: {
+                columnWidth: '.grid-item',
+                gutter: 18
+            }
+        });
+        // layout Isotope after each image loads
+        $grid.imagesLoaded().progress(function () {
+            $grid.isotope('layout');
+        });
+
+        $('.menu li a').on('click', function (e) {
+            e.preventDefault()
+            $('.menu li a').removeClass('on')
+            $(this).addClass('on')
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+        });
+
+        $('.grid-item').each(function () { $(this).hoverdir(); })
+
+        Fancybox.bind('[data-fancybox]', { });
+
+
+    </script>
+</body>
+
+</html>
+<!-- https://isotope.metafizzy.co/filtering -->
+<!-- https://tympanus.net/codrops/2012/04/09/direction-aware-hover-effect-with-css3-and-jquery/ -->
+<!-- https://fancyapps.com/fancybox/ -->
