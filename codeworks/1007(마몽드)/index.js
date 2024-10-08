@@ -97,15 +97,15 @@ window.addEventListener('scroll', function () {
     // }
 
     //세번째 방법 foreach방법
+    
     sections.forEach((section, i) => {
         let sectionTop = section.offsetTop
+        //조건값이 참인 section의 index를 찾아라
         if (scrollTop >= sectionTop - 100) {
-            for (const li of listElems) {
-                li.classList.remove('on')
-            }
-            for (const sec of sections) {
-                sec.classList.remove('on')
-            }
+
+            for (const li of listElems) {li.classList.remove('on')}
+            for (const sec of sections) {sec.classList.remove('on')}
+            
             listElems[i].classList.add('on')
             sections[i].classList.add('on')
         }
