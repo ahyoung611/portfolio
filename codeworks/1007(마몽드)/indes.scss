@@ -22,7 +22,6 @@
     justify-content: space-between;
 }
 
-
 header {
     @include flex-center;
     position: fixed;
@@ -96,12 +95,11 @@ section {
     h2 {
         font-family: Pretendard-SemiBold;
         font-size: 60px;
+        line-height: 1.5;
     }
 
     h3 {
         font-size: 40px;
-        padding-bottom: 30px;
-
     }
 
     p {
@@ -116,54 +114,36 @@ section {
 
     }
 
-    .icon {
-        width: 80px;
-        height: 80px;
-        animation: icon-rotate 5s linear infinite;
-        transform-origin: 50% 50%;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    &>article {
-        width: 50%;
-    }
-
-    .art1 {
-        position: absolute;
-        text-align: center;
-        line-height: 1.5;
-
-    }
-
-    .art2 {
-        video {
-            width: 100%;
-        }
-    }
 
     &.sect1 {
         @include background;
         background: url(./images/brand_story_bg.jpg);
         position: relative;
         font-family: Pretendard-SemiBold;
+        transition: .3s;
         opacity: 0;
+
+        &.on {
+            opacity: 1;
+
+            .desc {
+                opacity: 1;
+                bottom: 80px;
+
+            }
+
+        }
 
         .desc {
             text-align: center;
             color: #fff;
             position: absolute;
             left: 50%;
-            bottom: 0;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
+            bottom: -100px;
             line-height: 1.5;
-
-            &.on{
-                opacity: 1;
-                bottom: -50px;   
-            }
+            transition: 1s;
+            opacity: 0;
 
             h2 {
                 font-size: 80px;
@@ -176,34 +156,82 @@ section {
         }
     }
 
-    &.sect2 {
-        @include flex-center();
-        overflow: hidden;
-        position: relative;
+    &.sect2,
+    &.sect4 {
+        display: flex;
+        transition: .3s;
+        opacity: 0;
 
-        .icon {
-            position: absolute;
-            left: 11%;
-            top: 30%;
+        h3{
+            padding-bottom: 30px;
         }
 
-        .desc {
-            top: 40%;
-            opacity: 0;
-            transition: .6s;
+        &.on {
+            opacity: 1;
 
-            &.on {
+            .desc {
                 opacity: 1;
-                top: 80%;
+                top: 50%;
             }
         }
 
-        .art2 {
+        &>article {
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            animation: icon-rotate 5s linear infinite;
+            transform-origin: 50% 50%;
+    
+            img {
+                width: 100%;
+            }
+        }
+
+        .art1 {
+            position: relative;
+        }
+
+        .desc {
+            text-align: center;
+            width: 100%;
             position: absolute;
-            right: 0;
+            left: 50%;
+            top: 70%;
+            transform: translate(-50%, -50%);
+            transition: 1s;
+            opacity: 0;
+            // color:#7b85a7;
+            color: rgba(0,0,0,.9);
+        }
+
+        .art2 {
+            video {
+                width: 100%;
+                margin-top: -100px;
+            }
         }
 
 
+    }
+
+    &.sect2 {
+        .icon {
+            position: absolute;
+            left: 150px;
+            top: -100px;
+        }
+    }
+
+    &.sect4 {
+        .icon {
+            position: absolute;
+            left: 700px;
+            top: 320px;
+        }
     }
 
     &.sect3 {
@@ -212,9 +240,9 @@ section {
 
         .video {
             position: absolute;
-            top: 24%;
-            right: 3%;
-            width: 60%;
+            top: 20%;
+            right: 6%;
+            width: 58%;
 
             video {
                 width: 100%;
@@ -222,55 +250,35 @@ section {
         }
 
         .icon {
-            position: absolute;
-            left: 2%;
-            top: 15%;
+            display: inline-block;
+            width: 60px;
+            animation: icon-rotate 5s linear infinite;
+            transform-origin: 50% 50%;
+    
+            img {
+                width: 100%;
+            }
         }
 
         .desc {
+            text-align: center;
             position: absolute;
-            top: 22%;
-            left: 7%;
+            top: 18%;
+            left: 6%;
             color: #fff;
-            opacity: 0;
             transition: .6s;
 
-            &.on{
-                opacity: 1;
-                top: 50%;
-            }
+                .item{
+                    height: 400px;
+                    margin: 20px 0 20px -40px; 
+                    background-image: url(./images/mamonde-item.png);
+                    @include background();
+                }
+
 
         }
     }
 
-    &.sect4 {
-        @include flex-center();
-        overflow: hidden;
-        position: relative;
-        flex-direction: row-reverse;
-
-        .icon {
-            position: absolute;
-            right: 38%;
-            top: 35%;
-        }
-
-        .desc {
-            top: 40%;
-            opacity: 0;
-            transition: .6s;
-
-            &.on {
-                opacity: 1;
-                top: 80%;
-            }
-        }
-
-        .art2 {
-            position: absolute;
-            left: 0;
-        }
-    }
 
     &.sect5 {
         overflow: hidden;
