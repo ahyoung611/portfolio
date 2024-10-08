@@ -1,0 +1,336 @@
+@import url(/reset.css);
+
+@font-face {
+    font-family: Pretendard-Regular;
+    src: url(./font/Pretendard-Regular.subset.woff2);
+}
+
+@font-face {
+    font-family: Pretendard-SemiBold;
+    src: url(./font/Pretendard-SemiBold.subset.woff2);
+}
+
+@mixin background {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header {
+    @include flex-center;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 1);
+    width: 100%;
+    height: 80px;
+    padding: 20px;
+    font-family: Pretendard-SemiBold;
+    z-index: 99;
+
+    h1 {
+        width: 80px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    nav {
+        width: 30%;
+        font-size: 18px;
+
+        ul {
+            @include flex-center;
+
+            li {
+                padding: 20px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background-color: #fccc00;
+                    width: 100%;
+                    height: 3px;
+                    transition: .3s;
+                    opacity: 0;
+                }
+
+                &.on::after {
+                    opacity: 1;
+                }
+
+                a {
+                    position: relative;
+                }
+
+                &.on a::after {
+                    width: 100%;
+                }
+
+            }
+        }
+    }
+
+    .right-menu {
+        font-size: 16px;
+        width: 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+section {
+    font-family: Pretendard-Regular;
+    height: 100vh;
+
+    h2 {
+        font-family: Pretendard-SemiBold;
+        font-size: 60px;
+    }
+
+    h3 {
+        font-size: 40px;
+        padding-bottom: 30px;
+
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    @keyframes icon-rotate {
+        100% {
+            transform: rotate(360deg);
+        }
+
+    }
+
+    .icon {
+        width: 80px;
+        height: 80px;
+        animation: icon-rotate 5s linear infinite;
+        transform-origin: 50% 50%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &>article {
+        width: 50%;
+    }
+
+    .art1 {
+        position: absolute;
+        text-align: center;
+        line-height: 1.5;
+
+    }
+
+    .art2 {
+        video {
+            width: 100%;
+        }
+    }
+
+    &.sect1 {
+        @include background;
+        background: url(./images/brand_story_bg.jpg);
+        position: relative;
+        font-family: Pretendard-SemiBold;
+
+        .desc {
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, -50%);
+            line-height: 1.5;
+            opacity: 0;
+
+            &.on{
+                opacity: 1;
+                bottom: -50px;
+                
+            }
+
+            h2 {
+                font-size: 80px;
+            }
+
+            p {
+
+                font-size: 40px;
+            }
+        }
+    }
+
+    &.sect2 {
+        @include flex-center();
+        overflow: hidden;
+        position: relative;
+
+        .icon {
+            position: absolute;
+            left: 11%;
+            top: 30%;
+        }
+
+        .desc {
+            top: 40%;
+            opacity: 0;
+            transition: .6s;
+
+            &.on {
+                opacity: 1;
+                top: 80%;
+            }
+        }
+
+        .art2 {
+            position: absolute;
+            right: 0;
+        }
+
+
+    }
+
+    &.sect3 {
+        position: relative;
+        background-color: #000;
+
+        .video {
+            position: absolute;
+            top: 24%;
+            right: 3%;
+            width: 60%;
+
+            video {
+                width: 100%;
+            }
+        }
+
+        .icon {
+            position: absolute;
+            left: 2%;
+            top: 15%;
+        }
+
+        .desc {
+            position: absolute;
+            top: 22%;
+            left: 7%;
+            color: #fff;
+            opacity: 0;
+            transition: .6s;
+
+            &.on{
+                opacity: 1;
+                top: 50%;
+            }
+
+        }
+    }
+
+    &.sect4 {
+        @include flex-center();
+        overflow: hidden;
+        position: relative;
+        flex-direction: row-reverse;
+
+        .icon {
+            position: absolute;
+            right: 38%;
+            top: 35%;
+        }
+
+        .desc {
+            top: 40%;
+            opacity: 0;
+            transition: .6s;
+
+            &.on {
+                opacity: 1;
+                top: 80%;
+            }
+        }
+
+        .art2 {
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    &.sect5 {
+        overflow: hidden;
+
+        ul {
+            width: 100%;
+            height: 100%;
+            @include flex-center();
+
+            li {
+                position: relative;
+                flex: 1;
+                height: 100%;
+                @include background();
+                transition: .5s;
+
+                &:hover {
+                    flex: 4;
+
+                    .desc {
+                        opacity: 1;
+                        bottom: 60px;
+
+                    }
+                }
+
+                &.item1 {
+                    background-image: url(./images/item1.jpg);
+                }
+
+                &.item2 {
+                    background-image: url(./images/item2.jpg);
+                }
+
+                &.item3 {
+                    background-image: url(./images/item3.png);
+                }
+
+                .desc {
+                    position: absolute;
+                    left: 50px;
+                    bottom: -80px;
+                    opacity: 0;
+                    transition: 1.2s;
+
+                    button {
+                        margin-top: 40px;
+                        padding: 10px 20px;
+                        font-size: 16px;
+                        border: 1px solid #000;
+                        background-color: rgba(255, 255, 255, .2);
+
+                        &:hover {
+                            background-color: #000;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

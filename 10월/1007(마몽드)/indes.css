@@ -1,0 +1,271 @@
+@import url(/reset.css);
+@font-face {
+  font-family: Pretendard-Regular;
+  src: url(./font/Pretendard-Regular.subset.woff2);
+}
+@font-face {
+  font-family: Pretendard-SemiBold;
+  src: url(./font/Pretendard-SemiBold.subset.woff2);
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 80px;
+  padding: 20px;
+  font-family: Pretendard-SemiBold;
+  z-index: 99;
+}
+header h1 {
+  width: 80px;
+}
+header h1 img {
+  width: 100%;
+}
+header nav {
+  width: 30%;
+  font-size: 18px;
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav ul li {
+  padding: 20px;
+  position: relative;
+}
+header nav ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #fccc00;
+  width: 100%;
+  height: 3px;
+  transition: 0.3s;
+  opacity: 0;
+}
+header nav ul li.on::after {
+  opacity: 1;
+}
+header nav ul li a {
+  position: relative;
+}
+header nav ul li.on a::after {
+  width: 100%;
+}
+header .right-menu {
+  font-size: 16px;
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section {
+  font-family: Pretendard-Regular;
+  height: 100vh;
+}
+section h2 {
+  font-family: Pretendard-SemiBold;
+  font-size: 60px;
+}
+section h3 {
+  font-size: 40px;
+  padding-bottom: 30px;
+}
+section p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+@keyframes icon-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+section .icon {
+  width: 80px;
+  height: 80px;
+  animation: icon-rotate 5s linear infinite;
+  transform-origin: 50% 50%;
+}
+section .icon img {
+  width: 100%;
+}
+section > article {
+  width: 50%;
+}
+section .art1 {
+  position: absolute;
+  text-align: center;
+  line-height: 1.5;
+}
+section .art2 video {
+  width: 100%;
+}
+section.sect1 {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background: url(./images/brand_story_bg.jpg);
+  position: relative;
+  font-family: Pretendard-SemiBold;
+}
+section.sect1 .desc {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  line-height: 1.5;
+  opacity: 0;
+}
+section.sect1 .desc.on {
+  opacity: 1;
+  bottom: -50px;
+}
+section.sect1 .desc h2 {
+  font-size: 80px;
+}
+section.sect1 .desc p {
+  font-size: 40px;
+}
+section.sect2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+section.sect2 .icon {
+  position: absolute;
+  left: 11%;
+  top: 30%;
+}
+section.sect2 .desc {
+  top: 40%;
+  opacity: 0;
+  transition: 0.6s;
+}
+section.sect2 .desc.on {
+  opacity: 1;
+  top: 80%;
+}
+section.sect2 .art2 {
+  position: absolute;
+  right: 0;
+}
+section.sect3 {
+  position: relative;
+  background-color: #000;
+}
+section.sect3 .video {
+  position: absolute;
+  top: 24%;
+  right: 3%;
+  width: 60%;
+}
+section.sect3 .video video {
+  width: 100%;
+}
+section.sect3 .icon {
+  position: absolute;
+  left: 2%;
+  top: 15%;
+}
+section.sect3 .desc {
+  position: absolute;
+  top: 22%;
+  left: 7%;
+  color: #fff;
+  opacity: 0;
+  transition: 0.6s;
+}
+section.sect3 .desc.on {
+  opacity: 1;
+  top: 50%;
+}
+section.sect4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  flex-direction: row-reverse;
+}
+section.sect4 .icon {
+  position: absolute;
+  right: 38%;
+  top: 35%;
+}
+section.sect4 .desc {
+  top: 40%;
+  opacity: 0;
+  transition: 0.6s;
+}
+section.sect4 .desc.on {
+  opacity: 1;
+  top: 80%;
+}
+section.sect4 .art2 {
+  position: absolute;
+  left: 0;
+}
+section.sect5 {
+  overflow: hidden;
+}
+section.sect5 ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.sect5 ul li {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: 0.5s;
+}
+section.sect5 ul li:hover {
+  flex: 4;
+}
+section.sect5 ul li:hover .desc {
+  opacity: 1;
+  bottom: 60px;
+}
+section.sect5 ul li.item1 {
+  background-image: url(./images/item1.jpg);
+}
+section.sect5 ul li.item2 {
+  background-image: url(./images/item2.jpg);
+}
+section.sect5 ul li.item3 {
+  background-image: url(./images/item3.png);
+}
+section.sect5 ul li .desc {
+  position: absolute;
+  left: 50px;
+  bottom: -80px;
+  opacity: 0;
+  transition: 1.2s;
+}
+section.sect5 ul li .desc button {
+  margin-top: 40px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #000;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+section.sect5 ul li .desc button:hover {
+  background-color: #000;
+  color: #fff;
+}
