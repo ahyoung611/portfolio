@@ -149,6 +149,7 @@ section {
         background: url(./images/brand_story_bg.jpg);
         position: relative;
         font-family: Pretendard-SemiBold;
+        opacity: 0;
 
         .desc {
             text-align: center;
@@ -158,12 +159,10 @@ section {
             bottom: 0;
             transform: translate(-50%, -50%);
             line-height: 1.5;
-            opacity: 0;
 
             &.on{
                 opacity: 1;
-                bottom: -50px;
-                
+                bottom: -50px;   
             }
 
             h2 {
