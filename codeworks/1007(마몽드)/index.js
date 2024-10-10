@@ -111,3 +111,40 @@ window.addEventListener('scroll', function () {
         }
     })
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('main-header');
+    const sections = document.querySelectorAll('section');
+
+    // 각 섹션의 색상 데이터를 저장
+    const sectionColors = {
+        'sect1': 'rgba(255,255,255,0)', 
+        'sect2': 'rgba(249, 218, 237,.8)', 
+        'sect3': 'rgba(255,255,255,.8)',
+        'sect4': 'rgba(207, 236, 179,.8)',
+        'sect5': 'rgba(255,255,255,0)'
+    };
+
+    // Intersection Observer 옵션
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.6 // 섹션의 60%가 뷰포트에 보일 때 트리거
+    };
+
+    // 콜백 함수
+    const callback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.id;
+                header.style.backgroundColor = sectionColors[sectionId];
+            }
+        });
+    };
+
+    // Intersection Observer 생성
+    const observer = new IntersectionObserver(callback, options);
+
+    // 모든 섹션을 관찰
+    sections.forEach(section => observer.observe(section));
+});
