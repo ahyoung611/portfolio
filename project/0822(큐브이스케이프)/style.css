@@ -49,7 +49,7 @@ body .bg {
   left: 100px;
   top: 0;
   width: calc(100% - 100px);
-  height: 74px;
+  height: 90px;
   padding: 0 30px;
   color: #fff;
   z-index: 99;
@@ -83,27 +83,45 @@ body .bg {
   text-align: center;
   padding: 20px;
 }
-.gnb .menu .menu-icon {
+.gnb .menu .menu-bar {
+  position: relative;
   display: inline-block;
   cursor: pointer;
-}
-.gnb .menu .menu-icon .bar1,
-.gnb .menu .menu-icon .bar2,
-.gnb .menu .menu-icon .bar3 {
-  width: 25px;
-  height: 2px;
+  width: 30px;
+  height: 3px;
   background-color: #fff;
-  margin: 5px 0;
-  transition: 0.4s;
+  transition: 0.3s;
 }
-.gnb .menu .menu-icon .change .bar1 {
-  transform: translate(0, 11px) rotate(-45deg);
+.gnb .menu .menu-bar ::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -10px;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.3s;
 }
-.gnb .menu .menu-icon .change .bar2 {
-  opacity: 0;
+.gnb .menu .menu-bar ::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.3s;
 }
-.gnb .menu .menu-icon .change .bar3 {
-  transform: translate(0, -11px) rotate(45deg);
+.gnb .menu .menu-bar a {
+  width: 50px;
+  display: inline-block;
+  text-indent: -9999px;
+}
+.gnb .menu .menu-bar:hover ::before {
+  width: 10px;
+}
+.gnb .menu .menu-bar:hover ::after {
+  width: 20px;
 }
 
 .wrap {
@@ -214,172 +232,78 @@ body .bg {
   font-size: 48px;
   line-height: 1.5;
 }
-.wrap .art1 {
-  width: 100%;
-  position: relative;
-  height: 100vh;
+.wrap .sect4 {
+  overflow: hidden;
+  background-color: #000;
 }
-.wrap .art1 img {
-  width: 100%;
-}
-.wrap .art2 {
-  width: 45%;
-  position: absolute;
-  top: 25%;
-  transition: 0.45s;
-}
-.wrap .bd-box1 {
-  width: 611px;
-  margin: 100px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-.wrap .bd-box1 .bd-box2 {
-  margin: 10px;
-  padding: 10px;
+.wrap .sect4 .title-wrap {
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background-color: rgba(0, 0, 0, 0.05);
+  margin-top: 120px;
 }
-.wrap .bd-box1 .bd-box2 .theme-title {
-  font-size: 68px;
+.wrap .sect4 .title-wrap h2 {
+  font-size: 50px;
+  padding-bottom: 30px;
 }
-.wrap .bd-box1 .bd-box2 .level-wrap {
-  font-family: "Pretendard-Regular";
-  font-size: 21px;
+.wrap .sect4 ul {
+  margin-left: 100px;
+  width: 95%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
 }
-.wrap .bd-box1 .bd-box2 .level-wrap p {
-  padding-right: 10px;
-}
-.wrap .bd-box1 .bd-box2 .level-wrap .level li {
-  width: 25px;
-}
-.wrap .bd-box1 .bd-box2 .level-wrap .level li img {
-  width: 100%;
-}
-.wrap .bd-box1 .bd-box2 .detail-list {
-  gap: 100px;
-  padding: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-}
-.wrap .bd-box1 .bd-box2 .detail-list .detail-item p {
-  font-size: 25px;
-}
-.wrap .bd-box1 .bd-box2 .detail-list .detail-item strong {
-  font-size: 50px;
-}
-.wrap .bd-box1 .bd-box2 .type-item {
-  font-family: "Pretendard-Regular";
-  font-size: 20px;
-  gap: 20px;
-}
-.wrap .bd-box1 .bd-box2 .type-item .title {
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 5px 10px;
-}
-.wrap .wrapper {
+.wrap .sect4 ul li.item {
   position: relative;
-  width: 100%;
-  height: 100vh;
-}
-.wrap .sect4 {
-  background-image: url(./images/bg4.png);
-  width: 100%;
-  overflow: hidden;
-}
-.wrap .sect4 .art1-left {
-  position: absolute;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.35s;
-}
-.wrap .sect4 .art1-left.on {
-  transform: translate(-100%, -50%);
-}
-.wrap .sect4 .art1-left .theme-icon {
-  width: 498px;
-}
-.wrap .sect4 .art1-left .theme-icon.ani-r {
-  animation: rotate_image 8s linear infinite;
-  transform-origin: 50% 50%;
-}
-@keyframes rotate_image {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.wrap .sect4 .art1-left .theme-text {
-  width: 664px;
-}
-.wrap .sect4 .art2.left {
-  left: 100%;
-}
-.wrap .sect4 .art2.left.on {
-  left: 50%;
-}
-.wrap .sect5 {
-  background-image: url(./images/bg5.png);
-  width: 100%;
-}
-.wrap .sect5 .art1-right {
-  position: absolute;
-  width: 30%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.35s;
-}
-.wrap .sect5 .art1-right.on {
-  transform: translateY(-50%);
-}
-.wrap .sect5 .art1-right .theme-icon1 {
-  width: 570px;
-}
-.wrap .sect5 .art2.right {
-  left: -100%;
-}
-.wrap .sect5 .art2.right.on {
-  left: 0%;
-}
-.wrap .sect6 {
-  background-image: url(./images/bg6.png);
-  width: 100%;
-}
-.wrap .sect6 .art1-end {
-  position: absolute;
-  width: 40%;
-  left: 50%;
-  bottom: 10%;
-  transform: translateX(-50%);
-  transition: 0.45s;
-}
-.wrap .sect6 .art1-end.on {
-  transform: translateX(-100%);
-}
-.wrap .sect6 .art1-end .theme-icon1 {
-  width: 761px;
-}
-.wrap .sect6 .art2.end {
-  left: 100%;
-}
-.wrap .sect6 .art2.end.on {
-  left: 50%;
-}
-.wrap .sect6 .sect7 {
-  background-image: url(./images/bg7.png);
+  flex: 1;
   height: 100%;
-  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: 0.5s;
+  border-radius: 20px;
 }
-.wrap .sect6 .sect7 .swiper {
+.wrap .sect4 ul li.item:hover {
+  flex: 2;
+}
+.wrap .sect4 ul li.item:hover .desc {
+  opacity: 1;
+  bottom: 60px;
+}
+.wrap .sect4 ul li.item.item1 {
+  background-image: url(./images/아코디언/item1.png);
+}
+.wrap .sect4 ul li.item.item2 {
+  background-image: url(./images/아코디언/item2.png);
+}
+.wrap .sect4 ul li.item.item3 {
+  background-image: url(./images/아코디언/item3.png);
+}
+.wrap .sect4 ul li.item.item4 {
+  background-image: url(./images/아코디언/item4.png);
+}
+.wrap .sect4 ul li.item .desc {
+  font-family: Pretendard-Regular;
+  position: absolute;
+  left: 50px;
+  bottom: -80px;
+  opacity: 0;
+  transition: 1.2s;
+}
+.wrap .sect4 ul li.item .desc .level-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrap .sect4 ul li.item .desc .level-wrap ul.level {
   border: 1px solid #f00;
-  position: relative;
-  overflow: hidden;
+}
+.wrap .sect4 ul li.item .desc .level-wrap ul.level li {
+  width: 30px;
+}
+.wrap .sect4 ul li.item .desc .level-wrap ul.level li img {
+  width: 100%;
 }
 .wrap .flex-d {
   flex-direction: column;
@@ -398,29 +322,28 @@ body .bg {
   font-size: 60px;
   padding-bottom: 10px;
 }
-.wrap .sect7 {
+.wrap .sect5 {
   background-image: url(./images/bg7.png);
-  width: 100%;
   position: relative;
 }
-.wrap .sect7 .swiper {
+.wrap .sect5 .swiper {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
 }
-.wrap .sect7 .swiper .swiper-slide {
+.wrap .sect5 .swiper .swiper-slide {
   background-position: center;
   background-size: cover;
   width: 350px;
 }
-.wrap .sect7 .swiper .swiper-slide img {
+.wrap .sect5 .swiper .swiper-slide img {
   display: block;
   width: 100%;
 }
-.wrap .sect7 .container {
+.wrap .sect5 .container {
   position: relative;
 }
-.wrap .sect7 .container .hidden-text {
+.wrap .sect5 .container .hidden-text {
   font-family: Pretendard-Regular;
   opacity: 0;
   /* 처음에는 텍스트를 숨김 */
@@ -435,38 +358,38 @@ body .bg {
   width: 100%;
   height: 100%;
 }
-.wrap .sect7 .container .hidden-text h2 {
+.wrap .sect5 .container .hidden-text h2 {
   font-size: 32px;
   text-align: center;
   padding: 20px;
 }
-.wrap .sect7 .container .hidden-text h3 {
+.wrap .sect5 .container .hidden-text h3 {
   font-size: 18px;
   font-weight: 400;
   padding: 10px 0;
 }
-.wrap .sect7 .container .hidden-text p {
+.wrap .sect5 .container .hidden-text p {
   font-weight: 200;
   padding: 10px;
 }
-.wrap .sect7 .container .hidden-text .ga {
+.wrap .sect5 .container .hidden-text .ga {
   gap: 50px;
   padding: 10px;
 }
-.wrap .sect7 .container .hidden-text .level li {
+.wrap .sect5 .container .hidden-text .level li {
   width: 25px;
 }
-.wrap .sect7 .container .hidden-text .level li img {
+.wrap .sect5 .container .hidden-text .level li img {
   width: 100%;
 }
-.wrap .sect7 .container .hidden-text .detail {
+.wrap .sect5 .container .hidden-text .detail {
   line-height: 1.5;
 }
-.wrap .sect7 .container:hover .hidden-text {
+.wrap .sect5 .container:hover .hidden-text {
   opacity: 1;
   /* hover할 때 텍스트를 보이게 함 */
 }
-.wrap .sect8 {
+.wrap .sect6 {
   background-image: url(./images/bg8.png);
   width: 100%;
 }

@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: Pretendard-Regular;
     src: url(./font/Pretendard-Regular.woff);
@@ -8,9 +7,22 @@
     font-family: Pretendard-SemiBold;
     src: url(./font/Pretendard-SemiBold.woff);
 }
+
 @font-face {
     font-family: NanumMyeongjoBold;
     src: url(./font/NanumMyeongjoBold.woff);
+}
+
+@mixin background {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @import './reset.css';
@@ -63,7 +75,7 @@ body {
         left: 100px;
         top: 0;
         width: calc(100% - 100px);
-        height: 74px;
+        height: 90px;
         padding: 0 30px;
         color: #fff;
         z-index: 99;
@@ -103,30 +115,52 @@ body {
         text-align: center;
         padding: 20px;
 
-        .menu-icon {
+        .menu-bar {
+            position: relative;
             display: inline-block;
             cursor: pointer;
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            transition: .3s;
 
-            .bar1,
-            .bar2,
-            .bar3 {
-                width: 25px;
-                height: 2px;
+            ::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: -10px;
+                width: 30px;
+                height: 3px;
                 background-color: #fff;
-                margin: 5px 0;
-                transition: 0.4s;
+                transition: .3s;
+
             }
 
-            .change .bar1 {
-                transform: translate(0, 11px) rotate(-45deg);
+            ::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 10px;
+                width: 30px;
+                height: 3px;
+                background-color: #fff;
+                transition: .3s;
             }
 
-            .change .bar2 {
-                opacity: 0;
+            a {
+                width: 50px;
+                display: inline-block;
+                text-indent: -9999px;
             }
 
-            .change .bar3 {
-                transform: translate(0, -11px) rotate(45deg);
+            &:hover {
+                ::before {
+                    width: 10px;
+                }
+
+                ::after {
+                    width: 20px;
+                }
             }
         }
     }
@@ -264,227 +298,96 @@ body {
         }
     }
 
-    // sect4 ~ sect6 공통속성 *******************************************************************
-    .art1 {
-        width: 100%;
-        position: relative;
-        height: 100vh;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .art2 {
-        width: 45%;
-        position: absolute;
-        top: 25%;
-        transition: .45s;
-
-    }
-
-    .bd-box1 {
-        width: 611px;
-        margin: 100px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-
-        .bd-box2 {
-            margin: 10px;
-            padding: 10px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            background-color: rgba(0, 0, 0, .05);
-
-            .theme-title {
-                font-size: 68px;
-            }
-
-            .level-wrap {
-                font-family: 'Pretendard-Regular';
-                font-size: 21px;
-                padding: 20px;
-
-                p {
-                    padding-right: 10px;
-                }
-
-                .level li {
-                    width: 25px;
-
-                    img {
-                        width: 100%;
-                    }
-                }
-
-            }
-
-            .detail-list {
-                gap: 100px;
-                padding: 30px;
-                border-top: 1px solid rgba(255, 255, 255, 0.5);
-
-                .detail-item {
-                    p {
-                        font-size: 25px;
-                    }
-
-                    strong {
-                        font-size: 50px;
-                    }
-                }
-            }
-
-            .type-item {
-                font-family: 'Pretendard-Regular';
-                font-size: 20px;
-                gap: 20px;
-
-                .title {
-                    background-color: rgba(255, 255, 255, .2);
-                    padding: 5px 10px;
-                }
-            }
-
-        }
-    }
-
-    .wrapper {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-    }
-
-    //*******************************************************************
+    // sect4 *******************************************************************
     .sect4 {
-        background-image: url(./images/bg4.png);
-        width: 100%;
         overflow: hidden;
+        background-color: #000;
 
-        .art1-left {
-            position: absolute;
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            transition: .35s;
+        .title-wrap {
+            text-align: center;
+            margin-top: 120px;
 
-            &.on {
-                transform: translate(-100%, -50%);
+            h2 {
+                font-size: 50px;
+                padding-bottom: 30px;
             }
+        }
 
-            .theme-icon {
-                width: 498px;
+        ul {
+            margin-left: 100px;
+            width: 95%;
+            height: 70%;
+            @include flex-center();
+            gap: 20px;
+            padding: 20px;
 
-                &.ani-r {
-                    animation: rotate_image 8s linear infinite;
-                    transform-origin: 50% 50%;
+
+            li.item {
+                position: relative;
+                flex: 1;
+                height: 100%;
+                @include background();
+                transition: .5s;
+                border-radius: 20px;
+
+                &:hover {
+                    flex: 2;
+
+                    .desc {
+                        opacity: 1;
+                        bottom: 60px;
+
+                    }
                 }
 
-                @keyframes rotate_image {
-                    100% {
-                        transform: rotate(360deg);
+                &.item1 {
+                    background-image: url(./images/아코디언/item1.png);
+                }
+
+                &.item2 {
+                    background-image: url(./images/아코디언/item2.png);
+                }
+
+                &.item3 {
+                    background-image: url(./images/아코디언/item3.png);
+                }
+
+                &.item4 {
+                    background-image: url(./images/아코디언/item4.png);
+                }
+
+                .desc {
+                    font-family: Pretendard-Regular;
+                    position: absolute;
+                    left: 50px;
+                    bottom: -80px;
+                    opacity: 0;
+                    transition: 1.2s;
+
+                    .level-wrap {
+                        @include flex-center();
+
+                        ul.level {
+                            border: 1px solid #f00;
+
+                            li {
+                                width: 30px;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
                     }
                 }
             }
-
-            .theme-text {
-                width: 664px;
-            }
-
-        }
-
-
-        .art2.left {
-            left: 100%;
-
-            &.on {
-                left: 50%;
-            }
-        }
-
-    }
-
-    .sect5 {
-        background-image: url(./images/bg5.png);
-        width: 100%;
-
-        .art1-right {
-            position: absolute;
-            width: 30%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            transition: .35s;
-
-            &.on {
-                transform: translateY(-50%);
-            }
-
-            .theme-icon1 {
-                width: 570px;
-            }
-        }
-
-        .art2.right {
-            left: -100%;
-
-
-            &.on {
-                left: 0%;
-            }
         }
     }
 
-    .sect6 {
-        background-image: url(./images/bg6.png);
-        width: 100%;
 
-
-        .art1-end {
-            position: absolute;
-            width: 40%;
-            left: 50%;
-            bottom: 10%;
-            transform: translateX(-50%);
-            transition: .45s;
-
-            &.on {
-                transform: translateX(-100%);
-            }
-
-            .theme-icon1 {
-                width: 761px;
-            }
-        }
-
-        .art2.end {
-            left: 100%;
-
-            &.on {
-                left: 50%;
-            }
-
-        }
-
-        .sect7 {
-            background-image: url(./images/bg7.png);
-            height: 100%;
-            overflow: hidden;
-
-            .swiper {
-                border: 1px solid #f00;
-                position: relative;
-                overflow: hidden;
-            }
-        }
-    }
 
     // sect7~sect8 공통속성
-    .flex-d{
+    .flex-d {
         flex-direction: column;
         justify-content: center;
 
@@ -506,30 +409,10 @@ body {
 
     }
 
-    .sect7 {
+    .sect5 {
         background-image: url(./images/bg7.png);
-        width: 100%;
         position: relative;
 
-        // .wrapper {
-           
-        //     .title-wrap {
-        //         text-align: center;
-        //         margin: 25px;
-
-        //         p {
-        //             font-size: 20px;
-        //             padding-bottom: 10px;
-        //         }
-
-        //         h2 {
-        //             font-size: 60px;
-        //         }
-        //     }
-
-        // }
-
-        
         .swiper {
             width: 100%;
             padding-top: 50px;
@@ -549,7 +432,7 @@ body {
 
         .container {
             position: relative;
-            
+
 
             .hidden-text {
                 font-family: Pretendard-Regular;
@@ -579,10 +462,11 @@ body {
                     padding: 10px 0;
                 }
 
-                p{
+                p {
                     font-weight: 200;
                     padding: 10px;
                 }
+
                 .ga {
                     gap: 50px;
                     padding: 10px;
@@ -596,7 +480,9 @@ body {
                     }
                 }
 
-                .detail{line-height: 1.5;}
+                .detail {
+                    line-height: 1.5;
+                }
 
             }
 
@@ -607,7 +493,7 @@ body {
         }
     }
 
-    .sect8{
+    .sect6 {
         background-image: url(./images/bg8.png);
         width: 100%;
     }
