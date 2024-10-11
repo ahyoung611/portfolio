@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>청와대, 국민 품으로</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>
+      <a href="#"><img src="./images/logo.png" alt="청와대, 국민 품으로" class="logo-w">
+        <img src="./images/logo_black.png" alt="청와대, 국민 품으로" class="logo-b">
+      </a>
+    </h1>
+
+    <nav>
+      <ul>
+        <li class="main-menu">
+          <a href="#;">개방의 의미</a>
+        </li>
+        <li class="main-menu">
+          <a href="#;">청와대 소개</a>
+          <ul class="sub-menu">
+            <li><a href="#;">역사</a></li>
+            <li><a href="#;">지도 및 주요시설</a></li>
+            <li><a href="#;">경내 주요 유적</a></li>
+          </ul>
+        </li>
+        <li class="main-menu">
+          <a href="#;">관람안내</a>
+          <ul class="sub-menu">
+            <li><a href="#;">관람 규칙 및 규정</a></li>
+            <li><a href="#;">관람 시간 및 해설 안내</a></li>
+            <li><a href="#;">관람 신청</a></li>
+            <li><a href="#;">관람 안내도</a></li>
+            <li><a href="#;">함께 가 볼 만한 장소</a></li>
+            <li><a href="#;">공연 프로그램</a></li>
+          </ul>
+        </li>
+        <li class="main-menu">
+          <a href="#;">등산로</a>
+          <ul class="sub-menu">
+            <li><a href="#;">개요</a></li>
+            <li><a href="#;">등산로 코스</a></li>
+            <li><a href="#;">등산로 이모저모</a></li>
+          </ul>
+        </li>
+        <li class="main-menu">
+          <a href="#;">오시는 길 및 교통정보</a>
+          <ul class="sub-menu">
+            <li><a href="#;">오시는 길</a></li>
+            <li><a href="#;">청와대 관람 순환버스</a></li>
+            <li><a href="#;">서울시 자율주행 버스</a></li>
+          </ul>
+        </li>
+        <li class="main-menu">
+          <a href="#;">국민소통</a>
+          <ul class="sub-menu">
+            <li><a href="#;">공지사항</a></li>
+            <li><a href="#;">미디어센터</a></li>
+            <li><a href="#;">자주 하는 질문</a></li>
+          </ul>
+        </li>
+        <li class="main-menu">
+          <a href="#;">내가 만드는 청와대</a>
+          <ul class="sub-menu">
+            <li><a href="#;">관람후기</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <ul class="gnb">
+      <li><a href="#;">EN</a></li>
+      <li class="open-btn">
+        <span>
+          <a href="#">전체 메뉴 보기</a>
+        </span>
+      </li>
+
+    </ul>
+  </header>
+
+  <div class="sitemap-box on">
+    <div class="inner-box">
+      <div class="visual-box">
+        <h2>
+          <img src="./images/sitemap_logo.png" alt="">
+          <p>SITE MAP</p>
+          <button class="close-map-btn">
+            <span class="indent9999">사이트맵 닫기</span>
+          </button>
+        </h2>
+      </div>
+      <div class="menu-box">
+        <ul class="sitemap-nav">
+          <li class="main-menu">
+            <div class="main-m">
+              <a href="#;" target="_blank">개방의 의미</a>
+            </div>
+          </li>
+          <li class="main-menu">
+            <div class="main-m">
+              <a href="#;">청와대 소개</a>
+              <button class="updown-btn">
+                <span class="indent9999">하위 메뉴 보기</span>
+              </button>
+            </div>
+            <ul class="sub-menu">
+              <li><a href="#;">역사</a></li>
+              <li><a href="#;">지도 및 주요시설</a></li>
+              <li><a href="#;">경내 주요 유적</a></li>
+            </ul>
+          </li>
+          <li class="main-menu">
+            <div class="main-m">
+              <a href="#;">관람안내</a>
+              <button class="updown-btn">
+                <span class="indent9999">하위 메뉴 보기</span>
+              </button>
+            </div>
+            <ul class="sub-menu">
+              <li><a href="#;">관람 규칙 및 규정</a></li>
+              <li><a href="#;">관람 시간 및 해설 안내</a></li>
+              <li><a href="#;">관람 신청</a></li>
+              <li><a href="#;">관람 안내도</a></li>
+              <li><a href="#;">함께 가 볼 만한 장소</a></li>
+              <li><a href="#;">공연 프로그램</a></li>
+            </ul>
+          </li>
+          <li class="main-menu">
+            <div class="main-m">
+              <a href="#;">등산로</a>
+              <button class="updown-btn">
+                <span class="indent9999">하위 메뉴 보기</span>
+              </button>
+            </div>
+            <ul class="sub-menu">
+              <li><a href="#;">개요</a></li>
+              <li><a href="#;">등산로 코스</a></li>
+              <li><a href="#;">등산로 이모저모</a></li>
+            </ul>
+          </li>
+          <li class="main-menu">
+            <div class="main-m">
+              <a href="#;">오시는 길 및 교통정보</a>
+              <button class="updown-btn">
+                <span class="indent9999">하위 메뉴 보기</span>
+              </button>
+            </div>
+            <ul class="sub-menu">
+              <li><a href="#;">오시는 길</a></li>
+              <li><a href="#;">청와대 관람 순환버스</a></li>
+              <li><a href="#;">서울시 자율주행 버스</a></li>
+            </ul>
+          </li>
+          <li class="main-menu">
+            <div class="main-m">
+              <a href="#;">국민소통</a>
+              <button class="updown-btn">
+                <span class="indent9999">하위 메뉴 보기</span>
+              </button>
+            </div>
+            <ul class="sub-menu">
+              <li><a href="#;">공지사항</a></li>
+              <li><a href="#;">미디어센터</a></li>
+              <li><a href="#;">자주 하는 질문</a></li>
+            </ul>
+          </li>
+          <li class="main-menu">
+            <div class="main-m">
+              <a href="#;">내가 만드는 청와대</a>
+              <button class="updown-btn">
+                <span class="indent9999">하위 메뉴 보기</span>
+              </button>
+            </div>
+            <ul class="sub-menu">
+              <li><a href="#;">관람후기</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="sect1">
+      <div class="swiper Swiper1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide1">
+            <div class="desc desc1">
+              <p >2022. 05. 10.</p>
+              <p class="font-b">청와대,국민 품으로</p>
+            </div>
+          </div>
+          <div class="swiper-slide slide2">
+            <div class="desc desc2">
+              <p>“청와대는 임기 시작인 <br>
+                <span class="font-m">5월10일</span>에 개방하여 <br>
+                <span  class="font-m">국민께</span> 돌려드리겠습니다.”</p>
+            </div>
+          </div>
+          <div class="swiper-slide slide3">
+            <div class="desc desc3">
+              <p>“본관, 영빈관을 비롯하여..</p>
+            </div>
+          </div>
+          <div class="swiper-slide slide4">
+            <div class="desc desc4">
+              <p>최고의 정원이라 불리는 <br>
+                녹지원과 상춘재를 <span class="font-m">모두</span> <br>
+                <span class="font-m">국민들의 품으로</span> 돌려드리겠습니다.</p>
+            </div>
+          </div>
+          <div class="swiper-slide slide5">
+            <div class="desc desc5">
+              <p>“경복궁 지하철역에서 경복궁을 거쳐 청와대를 거쳐..</p>
+            </div>
+          </div>
+          <div class="swiper-slide slide6">
+            <div class="desc desc6">
+              <p>북악산으로의 등반로 역시 <span class="p-50">개방</span>되는 것입니다.”</p>
+            </div>
+          </div>
+          <div class="swiper-slide slide7">
+            <div class="desc desc7">
+              <p class="font-b">약속 실천으로 시작합니다</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div> -->
+      </div>
+    </section>
+
+    <section class="sect2"></section>
+    <section class="sect3"></section>
+    <section class="sect4"></section>
+    <section class="sect5"></section>
+  </main>
+  <footer></footer>
+
+  <script src="/js/jquery-3.7.1.min.js"></script>
+  <script src="./index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper1 = new Swiper(".Swiper1", {
+      effect: "fade",
+      speed: 2500,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+    });
+  </script>
+
+</body> 
+
+</html>
