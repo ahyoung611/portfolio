@@ -1,4 +1,4 @@
-@import url(../reset.css);
+@import url(/reset.css);
 @font-face {
   font-family: Pretendard-SemiBold;
   src: url(./font/Pretendard-SemiBold.woff2);
@@ -18,6 +18,10 @@
 @font-face {
   font-family: NotoSerifKR-Medium;
   src: url(./font/NotoSerifKR-Medium.woff2);
+}
+@font-face {
+  font-family: xeicon;
+  src: url(./font/xeicon.woff2);
 }
 header {
   display: flex;
@@ -213,7 +217,7 @@ header .gnb li.open-btn:hover ::after {
 .sitemap-box .main-menu > div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-family: Pretendard-SemiBold;
   padding-left: 5px;
 }
@@ -313,6 +317,147 @@ section.sect1 .swiper .swiper-slide .desc {
   font-weight: 500;
   color: #fff;
 }
+section.sect2 {
+  position: relative;
+  background: url(./images/sect2-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  color: #fff;
+}
+section.sect2 .title {
+  position: absolute;
+  top: 220px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+section.sect2 .title h2 {
+  font-family: NotoSerifKR-Medium;
+}
+section.sect2 .title p {
+  font-family: NotoSerifKR-Medium;
+}
+section.sect2 .title a {
+  display: block;
+  font-family: Pretendard-Medium;
+  width: 320px;
+  margin: auto;
+  padding: 23px 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 22px;
+}
+section.sect2 .title a::after {
+  content: "\e907";
+  font-family: xeicon;
+  display: inline-block;
+  margin: 0 0 0 10px;
+}
+section.sect2 ul.mn-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+section.sect2 ul.mn-list li {
+  position: relative;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.35s;
+}
+section.sect2 ul.mn-list li:nth-child(1):hover::after, section.sect2 ul.mn-list li:nth-child(2):hover::after, section.sect2 ul.mn-list li:nth-child(3):hover::after {
+  height: 100%;
+}
+section.sect2 ul.mn-list li:nth-child(1)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  z-index: 0;
+  background-color: #22adb9;
+  transition: 0.35s;
+}
+section.sect2 ul.mn-list li:nth-child(2)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  z-index: 0;
+  background-color: #1b5bbe;
+  transition: 0.35s;
+}
+section.sect2 ul.mn-list li:nth-child(3)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  z-index: 0;
+  background-color: #d93f69;
+  transition: 0.35s;
+}
+section.sect2 ul.mn-list li:nth-child(2) a .icon-box img {
+  margin-bottom: 40px;
+}
+section.sect2 ul.mn-list li a {
+  font-family: Pretendard-Medium;
+  font-weight: 500;
+}
+section.sect2 ul.mn-list li a .icon-box {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+section.sect2 ul.mn-list li a .icon-box img {
+  margin-bottom: 30px;
+}
+section.sect3 {
+  background: url(./images/sect3-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  color: #fff;
+}
+section.sect3 .inner-box {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  transition: 0.35s;
+}
+section.sect3 .text-box .item .title {
+  font-family: NotoSerifKR-Medium;
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 80px;
+  letter-spacing: -3px;
+  margin-bottom: 25px;
+}
+section.sect3 .text-box .item .title-desc {
+  font-family: NotoSerifKR-Medium;
+  font-size: 22px;
+  line-height: 35px;
+}
+section.sect3 .text-box ul li a span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Pretendard-Medium;
+  font-size: 20px;
+}
 
 footer {
   height: 25vh;
@@ -331,7 +476,7 @@ footer {
   header h1 a {
     width: 250px;
   }
-  .swiper-slide .desc {
+  .sect1 .swiper-slide .desc {
     font-family: NotoSerifKR-Medium;
     position: absolute;
     font-size: 20px;
@@ -339,33 +484,80 @@ footer {
     color: #fff;
     line-height: 40px;
   }
-  .swiper-slide .desc p {
+  .sect1 .swiper-slide .desc p {
     white-space: nowrap;
   }
-  .swiper-slide .desc .font-m {
+  .sect1 .swiper-slide .desc .font-m {
     font-size: 32px;
   }
-  .swiper-slide .desc .font-b {
+  .sect1 .swiper-slide .desc .font-b {
     font-size: 42px;
   }
-  .swiper-slide .desc.desc2, .swiper-slide .desc.desc4, .swiper-slide .desc.desc5, .swiper-slide .desc.desc7 {
+  .sect1 .swiper-slide .desc.desc2, .sect1 .swiper-slide .desc.desc4, .sect1 .swiper-slide .desc.desc5, .sect1 .swiper-slide .desc.desc7 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  .swiper-slide .desc.desc1 {
+  .sect1 .swiper-slide .desc.desc1 {
     left: 50%;
     top: 40%;
     transform: translateX(-50%);
   }
-  .swiper-slide .desc.desc3 {
+  .sect1 .swiper-slide .desc.desc3 {
     left: 6%;
     top: 30%;
   }
-  .swiper-slide .desc.desc6 {
+  .sect1 .swiper-slide .desc.desc6 {
     left: 50%;
     top: 38%;
     transform: translateX(-50%);
+  }
+  .sect2 .title h2 {
+    font-size: 7vw;
+    font-weight: 500;
+    line-height: 45px;
+    letter-spacing: -2px;
+    margin-bottom: 40px;
+    white-space: nowrap;
+  }
+  .sect2 .title p {
+    font-size: 3.4vw;
+    line-height: 26px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    white-space: nowrap;
+  }
+  .sect2 ul.mn-list {
+    flex-direction: column;
+    width: 100%;
+  }
+  .sect2 ul.mn-list li {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .sect2 ul.mn-list li a {
+    font-size: 18px;
+  }
+  .sect2 ul.mn-list li a .icon-box img {
+    display: none;
+  }
+  .sect2 ul.mn-list li a .icon-box p {
+    position: relative;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 20px;
+  }
+  .sect2 ul.mn-list li a .icon-box p::after {
+    content: "\e93f";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    font-family: xeicon;
   }
 }
 @media screen and (min-width: 801px) {
@@ -381,7 +573,7 @@ footer {
   .sitemap-box {
     display: none;
   }
-  .swiper-slide .desc {
+  .sect1 .swiper-slide .desc {
     font-family: NotoSerifKR-Medium;
     position: absolute;
     font-size: 32px;
@@ -389,39 +581,72 @@ footer {
     color: #fff;
     line-height: 60px;
   }
-  .swiper-slide .desc .font-m {
+  .sect1 .swiper-slide .desc .font-m {
     font-size: 44px;
   }
-  .swiper-slide .desc .font-b {
+  .sect1 .swiper-slide .desc .font-b {
     font-size: 60px;
   }
-  .swiper-slide .desc.desc5, .swiper-slide .desc.desc7 {
+  .sect1 .swiper-slide .desc.desc5, .sect1 .swiper-slide .desc.desc7 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  .swiper-slide .desc.desc1 {
+  .sect1 .swiper-slide .desc.desc1 {
     left: 50%;
     top: 40%;
     transform: translateX(-50%);
   }
-  .swiper-slide .desc.desc2 {
+  .sect1 .swiper-slide .desc.desc2 {
     text-align: left;
     left: 18%;
     top: 60%;
   }
-  .swiper-slide .desc.desc3 {
+  .sect1 .swiper-slide .desc.desc3 {
     left: 19%;
     top: 39%;
   }
-  .swiper-slide .desc.desc4 {
+  .sect1 .swiper-slide .desc.desc4 {
     text-align: left;
     left: 23%;
     top: 36%;
   }
-  .swiper-slide .desc.desc6 {
+  .sect1 .swiper-slide .desc.desc6 {
     left: 50%;
     top: 38%;
     transform: translateX(-50%);
+  }
+  .sect2 .title h2 {
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 80px;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+  }
+  .sect2 .title p {
+    font-size: 22px;
+    line-height: 35px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    margin-bottom: 60px;
+  }
+  .sect2 ul.mn-list {
+    width: 1000px;
+  }
+  .sect2 ul.mn-list li {
+    width: 40%;
+    margin-left: 3px;
+  }
+  .sect2 ul.mn-list li a {
+    font-size: 23px;
+  }
+  .sect2 ul.mn-list li a .icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .sect2 ul.mn-list li a .icon-box img {
+    margin-bottom: 30px;
   }
 }

@@ -139,11 +139,8 @@ section.sect2.on, section.sect4.on {
 }
 section.sect2.on .desc, section.sect4.on .desc {
   opacity: 1;
-  top: 50%;
 }
 section.sect2 .icon, section.sect4 .icon {
-  width: 80px;
-  height: 80px;
   animation: icon-rotate 5s linear infinite;
   transform-origin: 50% 50%;
 }
@@ -157,9 +154,6 @@ section.sect2 .desc, section.sect4 .desc {
   text-align: center;
   width: 100%;
   position: absolute;
-  left: 50%;
-  top: 70%;
-  transform: translate(-50%, -50%);
   transition: 1s;
   opacity: 0;
   color: rgba(0, 0, 0, 0.9);
@@ -167,16 +161,6 @@ section.sect2 .desc, section.sect4 .desc {
 section.sect2 .art2 video, section.sect4 .art2 video {
   width: 100%;
   margin-top: -100px;
-}
-section.sect2 .icon {
-  position: absolute;
-  left: 150px;
-  top: -100px;
-}
-section.sect4 .icon {
-  position: absolute;
-  left: 700px;
-  top: 320px;
 }
 section.sect3 {
   position: relative;
@@ -213,6 +197,12 @@ section.sect3 .desc .item {
   background-position: 50% 50%;
   background-size: cover;
 }
+section.sect2 .icon {
+  position: absolute;
+}
+section.sect4 .icon {
+  position: absolute;
+}
 section.sect5 {
   overflow: hidden;
   background-color: rgba(207, 236, 179, 0.5);
@@ -232,10 +222,11 @@ section.sect5 ul li {
   background-position: 50% 50%;
   background-size: cover;
   transition: 0.5s;
+  overflow: hidden;
 }
 section.sect5 ul li:hover .desc {
   opacity: 1;
-  bottom: 60px;
+  transition: 0.8s;
 }
 section.sect5 ul li.item1 {
   background-image: url(./images/item1.jpg);
@@ -248,10 +239,10 @@ section.sect5 ul li.item3 {
 }
 section.sect5 ul li .desc {
   position: absolute;
-  left: 50px;
-  bottom: -80px;
+  left: -50px;
+  top: 150px;
   opacity: 0;
-  transition: 1.2s;
+  white-space: nowrap;
 }
 section.sect5 ul li .desc button {
   margin-top: 40px;
@@ -289,10 +280,26 @@ section.sect5 ul li .desc button:hover {
   section.sect1 p {
     font-size: 4vw;
   }
+  section.sect2 .icon {
+    left: 45px;
+    top: -45px;
+  }
+  section.sect2.on .desc {
+    top: 43%;
+  }
   section.sect2 > article, section.sect4 > article {
     width: 100%;
     height: 50vh;
     overflow: hidden;
+  }
+  section.sect2 .icon, section.sect4 .icon {
+    width: 60px;
+    height: 60px;
+  }
+  section.sect2 .desc, section.sect4 .desc {
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
   }
   section.sect3.on {
     opacity: 1;
@@ -318,10 +325,20 @@ section.sect5 ul li .desc button:hover {
   }
   section.sect3 .desc .item {
     width: 300px;
-    height: 300px;
+    height: 270px;
+  }
+  section.sect4 .icon {
+    left: 385px;
+    top: 170px;
+  }
+  section.sect4.on .desc {
+    top: 39%;
   }
   section.sect5 li:hover {
     flex: 10;
+  }
+  section.sect5 li:hover .desc {
+    left: 30px;
   }
 }
 @media screen and (min-width: 801px) {
@@ -337,6 +354,10 @@ section.sect5 ul li .desc button:hover {
   section.sect1 p {
     font-size: 2vw;
   }
+  section.sect2 .icon {
+    left: 150px;
+    top: -100px;
+  }
   section.sect2, section.sect4 {
     display: flex;
   }
@@ -344,23 +365,35 @@ section.sect5 ul li .desc button:hover {
     width: 50%;
     overflow: hidden;
   }
+  section.sect2.on .desc, section.sect4.on .desc {
+    top: 50%;
+  }
+  section.sect2 .icon, section.sect4 .icon {
+    width: 80px;
+    height: 80px;
+  }
+  section.sect2 .desc, section.sect4 .desc {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   section.sect3.on {
     opacity: 1;
   }
   section.sect3.on .desc {
     opacity: 1;
-    top: 25%;
+    top: 24%;
   }
   section.sect3 .video {
     width: 58%;
-    top: 27%;
+    top: 22%;
     left: 2%;
   }
   section.sect3 .video video {
     width: 100%;
   }
   section.sect3 .desc {
-    right: 7%;
+    right: 9%;
     top: 50%;
   }
   section.sect3 .desc .icon {
@@ -370,7 +403,14 @@ section.sect5 ul li .desc button:hover {
     width: 400px;
     height: 350px;
   }
+  section.sect4 .icon {
+    left: 700px;
+    top: 320px;
+  }
   section.sect5 li:hover {
     flex: 4;
+  }
+  section.sect5 li:hover .desc {
+    left: 50px;
   }
 }
