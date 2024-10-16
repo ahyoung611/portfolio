@@ -4,47 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>청와대, 국민 품으로</title>
+  <title>청와대, 국민 품으로 me</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
 
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
 
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
 </head>
 
 <body>
@@ -279,10 +244,10 @@
     </section>
 
     <section class="sect2">
-      <div class="title">
-        <h2>과거와 현재, <br>
+      <div class="text-box">
+        <h2 class="title">과거와 현재, <br>
           미래를 관통하는 역사문화 공간</h2>
-        <p>2022년 5월 10일 부터 청와대가 온전히 국민의 공간이 됩니다. <br>
+        <p class="title-desc">2022년 5월 10일 부터 청와대가 온전히 국민의 공간이 됩니다. <br>
           청와대의 미래, 함께 그려주세요.</p>
         <a href="#">청와대 개방 관람 신청</a>
       </div>
@@ -313,10 +278,11 @@
         </li>
       </ul>
     </section>
+
     <section class="sect3">
-      <div class="inner-box">
-        <div class="text-box">
-          <div class="item">
+      <div class="inner">
+        <div class="col1">
+          <div class="text-box">
             <h2 class="title">
               희망과 기쁨을 함께할 <br>
               다양한 문화행사
@@ -333,138 +299,228 @@
           <ul>
             <li>
               <a href="#;">
-                <span>
-                  <div><img src="./images/sect3_icon01.png" alt=""></div>
-                  <p>관람시간 및 해설안내</p>
-                </span>
+                <div class="icon"><img src="./images/sect3_icon01.png" alt=""></div>
+                <p>관람시간 및 해설안내</p>
               </a>
             </li>
             <li>
               <a href="#;">
-                <span>
-                  <div><img src="./images/sect3_icon02.png" alt=""></div>
-                  <p>공연 프로그램</p>
-                </span>
+                <div class="icon"><img src="./images/sect3_icon02.png" alt=""></div>
+                <p>공연 프로그램</p>
               </a>
             </li>
             <li>
               <a href="#;">
-                <span>
-                  <div><img src="./images/sect3_icon03.png" alt=""></div>
-                  <p>함께 가 볼 만한 장소</p>
-                </span>
+                <div class="icon"><img src="./images/sect3_icon03.png" alt=""></div>
+                <p>함께 가 볼 만한 장소</p>
               </a>
             </li>
           </ul>
-        </div><!-- text-box -->
-        <div class="swriper">
-          <div>
-            <div>
-              <div class="slide-box">
-                <img src="img/img_event_6.jpg" alt="">
-                <div class="text-box">
-                  <h3>전국을 누리다</h3>
-                  <p>
-                    전국 청와대 유관장소(세종 대통령기록관, 청주 청남대,
-                    합천 청와대세트장)에서도 청와대 개방을 기념하는 특별한
-                    행사를 누릴 수 있습니다.
-                  </p>
+        </div>
+        <div class="col2">
+          <div class="swiper Swiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="slide-box">
+                  <div><img src="./images/sect3-slide1.jpg" alt=""></div>
+                  <div class="text-box">
+                    <h3>약속을 담다</h3>
+                    <p>
+                      74년 만에 국민의 품으로 완전히 돌아오는 역사적인 순간을
+                      축하하는 공연들을 청와대 본관 앞 대정원에 담아봅니다.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <!-- Slides -->
-            <div>
-              <div class="slide-box">
-                <img src="img/img_event_1.jpg" alt="">
-                <div class="text-box">
-                  <h3>약속을 담다</h3>
-                  <p>
-                    74년 만에 국민의 품으로 완전히 돌아오는 역사적인 순간을
-                    축하하는 공연들을 청와대 본관 앞 대정원에 담아봅니다.
-                  </p>
+              <div class="swiper-slide">
+                <div class="slide-box">
+                  <div><img src="./images/sect3-slide2.jpg" alt=""></div>
+                  <div class="text-box">
+                    <h3>희망을 나누다</h3>
+                    <p>
+                      푸른 잔디가 펼쳐진 녹지원과 춘추관 앞에서 즐거운
+                      문화예술로 푸른 희망을 나눕니다.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="slide-box">
-                <img src="img/img_event_2.jpg" alt="">
-                <div class="text-box">
-                  <h3>희망을 나누다</h3>
-                  <p>
-                    푸른 잔디가 펼쳐진 녹지원과 춘추관 앞에서 즐거운
-                    문화예술로 푸른 희망을 나눕니다.
-                  </p>
+              <div class="swiper-slide">
+                <div class="slide-box">
+                  <div><img src="./images/sect3-slide3.jpg" alt=""></div>
+                  <div class="text-box">
+                    <h3>역사를 그리다</h3>
+                    <p>
+                      국빈을 맞이하던 영빈관과 왕의 어머니들을 기리는 칠궁에서
+                      다양한 역사공연이 그려집니다.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="slide-box">
-                <img src="img/img_event_3.jpg" alt="">
-                <div class="text-box">
-                  <h3>역사를 그리다</h3>
-                  <p>
-                    국빈을 맞이하던 영빈관과 왕의 어머니들을 기리는 칠궁에서
-                    다양한 역사공연이 그려집니다.
-                  </p>
+              <div class="swiper-slide">
+                <div class="slide-box">
+                  <div><img src="./images/sect3-slide4.jpg" alt=""></div>
+                  <div class="text-box">
+                    <h3>자연을 품다</h3>
+                    <p>
+                      경복궁에서 청와대를 거쳐 북악산으로 이어지는 아름다운
+                      길을 걸으며 문화유산을 만나고 자연도 품어봅니다.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="slide-box">
-                <img src="img/img_event_4.jpg" alt="">
-                <div class="text-box">
-                  <h3>자연을 품다</h3>
-                  <p>
-                    경복궁에서 청와대를 거쳐 북악산으로 이어지는 아름다운
-                    길을 걸으며 문화유산을 만나고 자연도 품어봅니다.
-                  </p>
+              <div class="swiper-slide">
+                <div class="slide-box">
+                  <div><img src="./images/sect3-slide5.jpg" alt=""></div>
+                  <div class="text-box">
+                    <h3>문화를 펼치다</h3>
+                    <p>
+                      청와대 곳곳에서 남녀노소 함께 즐기는 문화체험 축제의
+                      장이 펼쳐집니다.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="slide-box">
-                <img src="img/img_event_5.jpg" alt="">
-                <div class="text-box">
-                  <h3>문화를 펼치다</h3>
-                  <p>
-                    청와대 곳곳에서 남녀노소 함께 즐기는 문화체험 축제의
-                    장이 펼쳐집니다.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="slide-box">
-                <img src="img/img_event_6.jpg" alt="">
-                <div class="text-box">
-                  <h3>전국을 누리다</h3>
-                  <p>
-                    전국 청와대 유관장소(세종 대통령기록관, 청주 청남대,
-                    합천 청와대세트장)에서도 청와대 개방을 기념하는 특별한
-                    행사를 누릴 수 있습니다.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="slide-box">
-                <img src="img/img_event_1.jpg" alt="">
-                <div class="text-box">
-                  <h3>약속을 담다</h3>
-                  <p>
-                    74년 만에 국민의 품으로 완전히 돌아오는 역사적인 순간을
-                    축하하는 공연들을 청와대 본관 앞 대정원에 담아봅니다.
-                  </p>
+              <div class="swiper-slide">
+                <div class="slide-box">
+                  <div><img src="./images/sect3-slide6.jpg" alt=""></div>
+                  <div class="text-box">
+                    <h3>전국을 누리다</h3>
+                    <p>
+                      전국 청와대 유관장소(세종 대통령기록관, 청주 청남대,
+                      합천 청와대세트장)에서도 청와대 개방을 기념하는 특별한
+                      행사를 누릴 수 있습니다.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="btn-box">
+            <a href="" class="prev"><img src="./images/prev.png" alt=""></a>
+            <a href="" class="next"><img src="./images/next.png" alt=""></a>
+          </div>
         </div>
-      </div><!-- inner-box -->
+      </div>
+    </section>
+
+    <section class="sect4">
+      <div class="text-box">
+        <h2 class="title">청와대에서 북악산까지</h2>
+        <p class="title-desc">청와대의 완전한 개방으로 광화문에서부터 북악산까지 이어지는 길 위에서 <br>
+          때로는 느긋하게 산책하고 휴식하고, 때로는 역사와 문화를 탐방하시기 바랍니다.</p>
+      </div>
+      <ul class="mn-list">
+        <li>
+          <a href="#;">
+            <div><img src="./images/sect4_tb1.png" alt=""></div>
+            <p>등산로 유적 탐방하기</p>
+            <div><img class="plus" src="./images/plus_icon.png" alt=""></div>
+          </a>
+        </li>
+        <li>
+          <a href="#;">
+            <div><img src="./images/sect4_tb2.png" alt=""></div>
+            <p>등산로 추천코스 살펴보기</p>
+            <div><img class="plus" src="./images/plus_icon.png" alt=""></div>
+          </a>
+        </li>
+        <li>
+          <a href="#;">
+            <div><img src="./images/sect4_tb3.png" alt=""></div>
+            <p>앱 다운로드</p>
+            <div><img class="plus" src="./images/plus_icon.png" alt=""></div>
+          </a>
+        </li>
+      </ul>
 
     </section>
-    <section class="sect4"></section>
-    <section class="sect5"></section>
+
+    <section class="sect5">
+      <div class="text-box">
+        <h2 class="title">함께 나누는 이야기</h2>
+      </div>
+
+      <div class="tabcontents">
+        <div class="tab" id="review">
+          <div class="swiper Swiper3">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <figure>
+                  <img src="./images/review1.jpg" alt="">
+                  <figcaption>
+                    <div class="text-box">
+                      <ul>
+                        <li class="name"><span>클린스카이</span></li>
+                        <li class="date"><span>2022. 05. 24.</span></li>
+                      </ul>
+                      <p>
+                        오래 살다 보니 청와대를 고궁처럼 구경 할 날도
+                        오네요 갔던 날 날씨도 화장했고 공기도 좋아
+                        청와대의 아름다움을 더 실감했습니다 조선시대 궁
+                        보다 더 멋졌습니다
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </li>
+              <li class="swiper-slide">
+                 <figure>
+                  <img src="./images/review2.jpg" alt="">
+                  <figcaption>
+                    <div class="text-box">
+                      <ul>
+                        <li class="name"><span>딩딩가족</span></li>
+                        <li class="date"><span>2022. 05. 21.</span></li>
+                      </ul>
+                      <p>
+                        5월의 아침 코로나로 답답했던 국민에게 청와대
+                        개방은 너무 소중한 힐링이었습니다.
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </li>
+              <li class="swiper-slide">
+                 <figure>
+                  <img src="./images/review3.jpg" alt="">
+                  <figcaption>
+                    <div class="text-box">
+                      <ul>
+                        <li class="name"><span>맥국</span></li>
+                        <li class="date"><span>2022. 05. 21.</span></li>
+                      </ul>
+                      <p>
+                        산책코스가 좋아요 청와대 경복궁 남산이 한장의
+                        사진. 아름다운 서울 .
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </li>
+              <li class="swiper-slide">
+                 <figure>
+                  <img src="./images/review4.jpg" alt="">
+                  <figcaption>
+                    <div class="text-box">
+                      <ul>
+                        <li class="name"><span>이강훈</span></li>
+                        <li class="date"><span>2022. 05. 16.</span></li>
+                      </ul>
+                      <p>
+                        54년만에 일반인 개방된 북악산 청와대 뒷길을
+                        갔다왔다 잘 정돈된 탐방로에 아름드리 숲속을
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer></footer>
 
@@ -475,15 +531,37 @@
   <script src="./index.js"></script>
 
   <script>
+
     var swiper1 = new Swiper(".Swiper1", {
+      speed: 1500,
       effect: "fade",
-      speed: 1000,
       loop: true,
       autoplay: {
-        delay: 2800,
+        delay: 2500,
         disableOnInteraction: false
+      }
+
+    });
+
+    var swiper2 = new Swiper(".Swiper2", {
+      loop: true,
+      navigation: {
+        nextEl: ".next",
+        prevEl: ".prev",
       },
     });
+
+ 
+    var swiper = new Swiper(".Swiper3", {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      freeMode: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
   </script>
 
 </body>

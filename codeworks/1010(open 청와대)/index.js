@@ -133,3 +133,12 @@ tl.textEffect('.desc1')
 .textEffect('.desc5')
 .textEffect('.desc6')
 .textEffect('.desc7')
+
+
+$('.mn-list li').mouseenter(function () {
+    $(this).addClass('on')
+})
+
+$('.mn-list li').mouseleave(function () {
+    $(this).removeClass('on')
+})
