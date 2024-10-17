@@ -92,47 +92,46 @@ $('.close-map-btn').click(function () {
 })
 
 
+//gsap 섹션 1 슬라이드 & 글자 나오게
+gsap.set('.bg > div', { opacity: 0 });
+
 gsap.registerEffect({
     name: 'textEffect',
     extendTimeline: true,
-    //defaults는 초기값
-    //defaults 확인
-    defaults: {
-        x: 50,
-        y: -50,
-        opacity: 0
+
+    defaults: { //defaults는 초기값 //defaults 확인
+        x: 20,
+        y: -20
     },
     // 기본속성 값은 effect: (target, config)
-    effect: (target, { x, y, opacity }) => {
-        const { chars } = new SplitText(target, { type: 'chars' })
+    effect: (target, { x, y }) => {
+        const { chars } = new SplitText(target, { type: 'chars' });
+        const index = target[0].dataset.index; //인덱스 값 읽어들인다.
         const tl = gsap.timeline()
-        tl.from(chars, {
-            opacity: opacity,
-            x: x,
-            scale:1.2,
-            stagger: .05
-        })
 
-        tl.to(chars, {
-            // delay:1,
-            opacity: opacity,
-            y: y,
-            duration:1,
-            stagger: .05
-        })
-
-        return tl
+        tl.from(chars, { x: x, opacity: 0, filter: 'blur(5px)', stagger: 0.1})
+            //bg 안에 첫번째 두번째
+            .to(`.bg > div:nth-child(${index})`, { opacity: 1 }, 0)
+            .to(chars, { delay: 3, opacity: 0, y: y, stagger: 0.05 })
+            .to(`.bg > div:nth-child(${index})`, { opacity: 1 }, .5)
+        return tl;
     }
-})
+});
 
-const tl = gsap.timeline({repeat:-1})
-tl.textEffect('.desc1')
-.textEffect('.desc2')
-.textEffect('.desc3')
-.textEffect('.desc4')
-.textEffect('.desc5')
-.textEffect('.desc6')
-.textEffect('.desc7')
+function textAnimation() {
+    const animation = gsap.timeline({
+        repeat: -1
+    });
+    animation.textEffect('.slide1')
+        .textEffect('.slide2')
+        .textEffect('.slide3')
+        .textEffect('.slide4')
+        .textEffect('.slide5')
+        .textEffect('.slide6')
+        .textEffect('.slide7');
+}
+
+textAnimation();
 
 
 $('.mn-list li').mouseenter(function () {
@@ -141,4 +140,14 @@ $('.mn-list li').mouseenter(function () {
 
 $('.mn-list li').mouseleave(function () {
     $(this).removeClass('on')
+})
+
+$('.contents-list li').click(function (e) {
+    e.preventDefault()
+    let idx = $(this).index()
+    $('.tab').removeClass('on')
+    $('.tab').eq(idx).addClass('on')
+
+    $('.contents-list a').removeClass('on')
+    $(this).find('a').addClass('on')
 })
