@@ -5,31 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>큐브이스케이프</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
-    <div class="gnb">
-        <header>
-            <h1><img src="./images/logo.png" alt="로고"></h1>
-            <nav>
-                <ul>
-                    <li><a href="#">예약하기</a></li>
-                    <li><a href="#">가맹 및 제휴문의</a></li>
-                    <li><a href="#">리뷰</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="menu">
-            <div class="menu-bar">
-                <span>
-                    <a href="#">전체 메뉴 보기</a>
-                </span>
-            </div>
-        </div>
-    </div><!-- gnb -->
+    <header>
+        <h1><img src="./images/logo.png" alt="로고"></h1>
+        <nav>
+            <ul>
+                <li><a href="#">예약하기</a></li>
+                <li><a href="#">가맹 및 제휴문의</a></li>
+                <li><a href="#">리뷰</a></li>
+                <li><a href="#">
+                        <div class="menu-bar">
+                            <span>
+                            </span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="wrap">
         <section class="sect1">
@@ -163,26 +161,38 @@
         </section>
 
         <section class="sect5">
-            <div class="wrapper">
-                <div class="title-wrap">
-                    <h2>THEME</h2>
-                    <p>테마소개</p>
-                </div><!-- title-wrap -->
+            <h2 class="title">THEME</h2>
 
-                <div class="swiper swiper1">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide slide1"></div>
-                      <div class="swiper-slide slide2"></div>
-                      <div class="swiper-slide slide3"></div>
-                      <div class="swiper-slide slide4"></div>
-                      <div class="swiper-slide slide5"></div>
-                      <div class="swiper-slide slide6"></div>
-                      <div class="swiper-slide slide7"></div>
+            <div class="tablist">
+                <ul class="tab-menu">
+                    <li class="on"><a href="#">홍대점</a></li>
+                    <li><a href="#">인천구월점</a></li>
+                    <li><a href="#">전주점</a></li>
+                    <li><a href="#">잠실점</a></li>
+                    <li><a href="#">대전두산점</a></li>
+                    <li><a href="#">천호점</a></li>
+                    <li><a href="#">수유점</a></li>
+                </ul>
+                <div class="tabs">
+                    <div class="tab">
+                        <div class="swiper tab-Swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="./images/gallery/gallery1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="./images/gallery/gallery2.png" alt=""></div>
+                                <div class="swiper-slide"><img src="./images/gallery/gallery1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="./images/gallery/gallery1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="./images/gallery/gallery1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="./images/gallery/gallery1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="./images/gallery/gallery1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="./images/gallery/gallery1.png" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                  </div>
+                </div>
+            </div>
 
-            </div><!-- wrapper -->
         </section>
 
         <section class="sect6">
@@ -202,10 +212,9 @@
 
     </div> <!-- wrap -->
     <script src="./script/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="/js/jquery.mCustomScrollbar.js"></script>
-    <script src="./script/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./index.js"></script>
 
 </body>
 
